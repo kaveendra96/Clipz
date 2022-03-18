@@ -15,8 +15,8 @@ export class AuthModalComponent implements OnInit,OnDestroy {
     this.modal.register('test');
   }
 
-  ngOnDestroy(): void {
-    this.modal.unregister('auth');
+  ngOnDestroy() {
+    this.modal.unregister('auth')
   }
 
 }
