@@ -18,7 +18,7 @@ export class RegisterComponent  {
   ])
   age = new FormControl('', [
     Validators.required,
-    Validators.min(18),
+    Validators.min(16),
     Validators.max(120)
   ])
   password = new  FormControl('', [
@@ -30,9 +30,12 @@ export class RegisterComponent  {
   ])
   phoneNumber = new FormControl('', [
     Validators.required,
-    Validators.minLength(13),
-    Validators.maxLength(13)
+    
   ])
+
+  showAlert=false;
+  alertMsg='Please wait! Your account is being created';
+  alertColor='blue';
 
   registerForm = new FormGroup({
     name: this.name,
@@ -42,5 +45,11 @@ export class RegisterComponent  {
     confirm_password: this.confirm_password,
     phoneNumber: this.phoneNumber
   })
+
+  register(){
+    this.showAlert = true;
+    this.alertMsg='Please wait! Your account is being created';
+    this.alertColor = 'blue';
+  }
 
 }
